@@ -36,10 +36,6 @@ The test dataset produced three activations for `MOTOR-201`, `MOTOR-202`, and `C
 ├── Critical Equipment Temperature Activator.Reflex/
 ├── Real-Time Operations Dashboard.KQLDashboard/
 ├── eh_real_time_operations.Eventhouse/
-├── queries/
-│   ├── dashboard_queries.kql
-│   ├── setup.kql
-│   └── validation_queries.kql
 ├── LICENSE
 └── README.md
 ```
@@ -47,9 +43,9 @@ The test dataset produced three activations for `MOTOR-201`, `MOTOR-202`, and `C
 ## Reproduce the project
 
 1. Create an Eventhouse and a KQL database in Microsoft Fabric.
-2. Run `queries/setup.kql` to create the table and ingest the sample events.
-3. Run `queries/validation_queries.kql` to verify the data and critical-event logic.
-4. Use `queries/dashboard_queries.kql` to create the four dashboard visuals.
+2. Run the setup KQL script to create the table and ingest the sample events.
+3. Run the validation KQL script to verify the data and critical-event logic.
+4. Use the dashboard KQL script to create the four dashboard visuals.
 5. Create an Activator rule grouped by `equipment_id` with `max_temperature_c > 85`, evaluated every 5 minutes.
 
 ## Validation results
