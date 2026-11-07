@@ -1,0 +1,12 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Eventhouse",
+    "displayName": "eh_real_time_operations",
+    "description": "eh_real_time_operations"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "078c02da-2e2d-b9b9-431c-9fb7ec74fbaf"
+  }
+}

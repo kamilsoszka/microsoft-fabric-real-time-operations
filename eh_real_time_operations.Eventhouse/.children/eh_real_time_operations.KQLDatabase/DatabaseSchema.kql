@@ -1,0 +1,5 @@
+// KQL script
+// Use management commands in this script to configure your database items, such as tables, functions, materialized views, and more.
+
+
+.create-merge table operations_events (event_id:string, event_time:datetime, facility_id:string, equipment_id:string, event_type:string, severity:string, temperature_c:real, vibration_mm_s:real, pressure_bar:real, energy_kw:real, status:string) 
