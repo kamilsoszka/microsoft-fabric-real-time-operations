@@ -1,0 +1,69 @@
+# Microsoft Fabric Real-Time Operations Monitoring
+
+A portfolio project that demonstrates operational telemetry monitoring in Microsoft Fabric using Eventhouse, a KQL database, a Real-Time Dashboard, and an Activator alert rule.
+
+## Solution overview
+
+The solution stores equipment telemetry in the `operations_events` table and uses KQL to detect critical operating conditions, compare facilities and equipment, and visualize temperature trends.
+
+### Components
+
+- Microsoft Fabric Eventhouse
+- KQL database: `eh_real_time_operations`
+- Table: `operations_events`
+- Real-Time Dashboard with four visuals
+- Activator rule: `Critical Equipment Temperature Rule`
+
+## Dashboard
+
+![Real-Time Operations Dashboard](docs/images/real-time-operations-dashboard.png)
+
+The dashboard contains:
+
+1. Critical Events KPI
+2. Maximum Temperature by Equipment
+3. Average Temperature by Facility
+4. Average Temperature Over Time
+
+## Alert rule
+
+The alert evaluates each `equipment_id` every 5 minutes and activates when `max_temperature_c > 85`.
+
+![Critical Temperature Alert Activations](docs/images/critical-temperature-alert-activations.png)
+
+The test dataset produced three activations for `MOTOR-201`, `MOTOR-202`, and `COMP-303`.
+
+## Repository structure
+
+```text
+.
+├── README.md
+├── docs/
+│   └── images/
+│       ├── critical-temperature-alert-activations.png
+│       └── real-time-operations-dashboard.png
+└── queries/
+    ├── dashboard_queries.kql
+    ├── setup.kql
+    └── validation_queries.kql
+```
+
+## Reproduce the project
+
+1. Create an Eventhouse and a KQL database in Microsoft Fabric.
+2. Run `queries/setup.kql` to create the table and ingest the sample events.
+3. Run `queries/validation_queries.kql` to verify the data and critical-event logic.
+4. Use `queries/dashboard_queries.kql` to create the four dashboard visuals.
+5. Create an Activator rule grouped by `equipment_id` with `max_temperature_c > 85`, evaluated every 5 minutes.
+
+## Validation results
+
+- 10 ingested telemetry events
+- 9 unique equipment identifiers
+- 3 facilities
+- 3 critical alert activations
+- Active alert status confirmed as Running
+
+## Skills demonstrated
+
+Microsoft Fabric, Real-Time Intelligence, Eventhouse, KQL, operational monitoring, dashboard design, threshold-based alerting, and technical documentation.
