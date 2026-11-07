@@ -67,3 +67,8 @@ The test dataset produced three activations for `MOTOR-201`, `MOTOR-202`, and `C
 ## Skills demonstrated
 
 Microsoft Fabric, Real-Time Intelligence, Eventhouse, KQL, operational monitoring, dashboard design, threshold-based alerting, and technical documentation.
+
+## License
+
+This project is licensed under the [MIT License](LICENSE).
+
