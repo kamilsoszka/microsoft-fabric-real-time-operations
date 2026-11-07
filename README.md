@@ -16,8 +16,6 @@ The solution stores equipment telemetry in the `operations_events` table and use
 
 ## Dashboard
 
-![Real-Time Operations Dashboard](docs/images/real-time-operations-dashboard.png)
-
 The dashboard contains:
 
 1. Critical Events KPI
@@ -29,23 +27,21 @@ The dashboard contains:
 
 The alert evaluates each `equipment_id` every 5 minutes and activates when `max_temperature_c > 85`.
 
-![Critical Temperature Alert Activations](docs/images/critical-temperature-alert-activations.png)
-
 The test dataset produced three activations for `MOTOR-201`, `MOTOR-202`, and `COMP-303`.
 
 ## Repository structure
 
 ```text
 .
-├── README.md
-├── docs/
-│   └── images/
-│       ├── critical-temperature-alert-activations.png
-│       └── real-time-operations-dashboard.png
-└── queries/
-    ├── dashboard_queries.kql
-    ├── setup.kql
-    └── validation_queries.kql
+├── Critical Equipment Temperature Activator.Reflex/
+├── Real-Time Operations Dashboard.KQLDashboard/
+├── eh_real_time_operations.Eventhouse/
+├── queries/
+│   ├── dashboard_queries.kql
+│   ├── setup.kql
+│   └── validation_queries.kql
+├── LICENSE
+└── README.md
 ```
 
 ## Reproduce the project
@@ -77,4 +73,3 @@ Microsoft Fabric, Real-Time Intelligence, Eventhouse, KQL, operational monitorin
 ## License
 
 This project is licensed under the [MIT License](LICENSE).
-
