@@ -1,0 +1,31 @@
+// Verify ingested events
+operations_events
+| order by event_time asc
+
+// Operational summary
+operations_events
+| summarize
+    event_count = count(),
+    avg_temperature_c = round(avg(temperature_c), 1),
+    avg_vibration_mm_s = round(avg(vibration_mm_s), 1),
+    avg_pressure_bar = round(avg(pressure_bar), 1),
+    avg_energy_kw = round(avg(energy_kw), 1)
+    by facility_id, status
+| order by facility_id asc, status asc
+
+// Critical equipment detection
+operations_events
+| where status == "Critical"
+    or temperature_c >= 85.0
+    or vibration_mm_s >= 8.0
+| project
+    event_time,
+    facility_id,
+    equipment_id,
+    status,
+    severity,
+    temperature_c,
+    vibration_mm_s,
+    pressure_bar,
+    energy_kw
+| order by event_time desc
