@@ -68,6 +68,12 @@ The test dataset produced three activations for `MOTOR-201`, `MOTOR-202`, and `C
 
 Microsoft Fabric, Real-Time Intelligence, Eventhouse, KQL, operational monitoring, dashboard design, threshold-based alerting, and technical documentation.
 
+## Challenges and Lessons Learned
+
+- **Activator threshold tuning:** Configuring the temperature rule required balancing sensitivity to avoid false positives while ensuring critical events were captured.
+- **KQL windowing functions:** Designing the real-time aggregations required careful handling of time windows to accurately reflect equipment states.
+- **Git integration workflow:** Managing Fabric artifacts in source control required understanding how workspace item schemas map to repository folders.
+
 ## License
 
 This project is licensed under the [MIT License](LICENSE).
