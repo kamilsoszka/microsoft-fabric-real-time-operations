@@ -1,5 +1,5 @@
 {
-  "schema_version": 88,
+  "schema_version": 89,
   "flavor": "RTDashboard_Regular",
   "changeDetection": {
     "kind": "liveUpdates",
@@ -10,7 +10,7 @@
   "tiles": [
     {
       "id": "b7cb303b-10cb-46bb-975e-537e5066b5b8",
-      "title": "Maximum Temperature by Equipment",
+      "title": "Maximum Temperature by Equipment (°C)",
       "visualType": "column",
       "pageId": "98104b1d-8d39-40f1-bcd9-0560d599614d",
       "layout": {
@@ -130,6 +130,36 @@
               "label": "Danger"
             }
           }
+        },
+        "kpi__conditionalFormatting_V2": {
+          "showBadges": false,
+          "showZoneMarks": true,
+          "ranges": [
+            {
+              "range": [
+                0,
+                33
+              ],
+              "label": "OK",
+              "labelIcon": "recommended"
+            },
+            {
+              "range": [
+                33,
+                67
+              ],
+              "label": "Warning",
+              "labelIcon": "recommended"
+            },
+            {
+              "range": [
+                67,
+                100
+              ],
+              "label": "Danger",
+              "labelIcon": "recommended"
+            }
+          ]
         }
       }
     },
